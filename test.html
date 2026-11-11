@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te Amo Mucho ❤️</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle, #ff4d6d, #c9184a, #800f2f);
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+  }
+
+  /* شكل القلب */
+  .heart {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #ff0a54;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 80px #ff0a54, 0 0 150px #ff0a54;
+    animation: pulse 1s infinite alternate;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #ff0a54;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -150px;
+    left: 0;
+  }
+
+  .heart::after {
+    top: 0;
+    left: 150px;
+  }
+
+  /* نبض القلب */
+  @keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    100% { transform: rotate(-45deg) scale(1.08); }
+  }
+
+  /* حاوية النص */
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    direction: ltr;
+  }
+
+  /* النص الرئيسي */
+  .text {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px #fff, 0 0 40px #ff0a54;
+    animation: glow 1.5s infinite alternate;
+  }
+
+  /* النص الثانوي */
+  .subtext {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-top: 10px;
+    text-shadow: 0 0 15px #fff, 0 0 30px #ffb3c6;
+    animation: glow 1.5s infinite alternate;
+    font-style: italic;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 20px #fff, 0 0 40px #ff0a54; }
+    to { text-shadow: 0 0 30px #fff, 0 0 60px #ff0a54, 0 0 80px #ff0a54; }
+  }
+
+  /* قلوب صغيرة متطايرة */
+  .floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .floating-hearts span {
+    position: absolute;
+    bottom: -50px;
+    font-size: 2rem;
+    color: #ffb3c6;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+  }
+
+  .floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .floating-hearts span:nth-child(2) { left: 25%; animation-delay: 1s; }
+  .floating-hearts span:nth-child(3) { left: 40%; animation-delay: 2s; }
+  .floating-hearts span:nth-child(4) { left: 55%; animation-delay: 3s; }
+  .floating-hearts span:nth-child(5) { left: 70%; animation-delay: 4s; }
+  .floating-hearts span:nth-child(6) { left: 85%; animation-delay: 5s; }
+</style>
+</head>
+<body>
+
+  <div class="floating-hearts">
+    <span>❤️</span>
+    <span>💖</span>
+    <span>❤️</span>
+    <span>💕</span>
+    <span>❤️</span>
+    <span>💖</span>
+  </div>
+
+  <div class="heart"></div>
+  
+  <div class="text-container">
+    <div class="text">Te amo mucho</div>
+    <div class="subtext">Mi luna Karen</div>
+  </div>
+
+</body>
+</html>
